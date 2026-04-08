@@ -15,10 +15,11 @@
 
 ## ✨ 特性
 
-- 🚀 **零配置** - 基于 DrissionPage，自动管理浏览器
+- 🚀 **零配置** - 基于 [DrissionPage](https://drissionpage.cn/)，自动管理浏览器
 - 🔧 **模块化** - 4 个独立工具，按需使用
 - 🐍 **纯 Python** - 代码简洁，易于二次开发
 - 📦 **无侵入** - 不修改系统，不注入进程
+- 🌐 **跨平台** - Windows / macOS / Linux 全支持
 
 ---
 
@@ -47,12 +48,14 @@
 ### 2. 安装 Python 依赖
 
 ```bash
-git clone https://github.com/<your-name>/douyin-web-tools.git
+git clone https://github.com/strong68/douyin-web-tools.git
 cd douyin-web-tools
 pip install -r requirements.txt
 ```
 
-> 💡 DrissionPage 会自动检测并使用系统中的 Chrome，无需额外配置
+> 💡 本工具基于 [DrissionPage](https://drissionpage.cn/) 开发，它会自动检测并使用系统中的 Chrome，无需额外配置驱动
+>
+> 📖 DrissionPage 文档: https://drissionpage.cn/
 
 ### 1. 搜索视频
 
