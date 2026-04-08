@@ -35,7 +35,16 @@
 
 ## 🚀 快速开始
 
-### 安装
+### 1. 安装 Chrome 浏览器
+
+本工具基于浏览器自动化，需要 Google Chrome：
+
+- **Windows/macOS**: [下载 Chrome](https://www.google.com/chrome/)
+- **Linux**: `sudo apt install google-chrome-stable` (Ubuntu/Debian)
+
+> 💡 已安装 Chrome？跳过此步骤
+
+### 2. 安装 Python 依赖
 
 ```bash
 git clone https://github.com/<your-name>/douyin-web-tools.git
@@ -43,7 +52,7 @@ cd douyin-web-tools
 pip install -r requirements.txt
 ```
 
-> 💡 首次运行会自动下载 Chromium 浏览器（DrissionPage 内置）
+> 💡 DrissionPage 会自动检测并使用系统中的 Chrome，无需额外配置
 
 ### 1. 搜索视频
 
@@ -134,11 +143,27 @@ douyin-web-tools/
 
 ## 🛠️ 环境要求
 
-| 项目 | 版本 |
-|:---|:---|
-| Python | 3.8+ |
-| DrissionPage | 4.0+ |
-| 操作系统 | Windows / macOS / Linux |
+| 项目 | 版本 | 说明 |
+|:---|:---|:---|
+| Python | 3.8+ | 必需 |
+| Google Chrome | 最新版 | [下载安装](https://www.google.com/chrome/) |
+| DrissionPage | 4.0+ | `pip install DrissionPage` |
+| 操作系统 | Windows / macOS / Linux | 全平台支持 |
+
+### Chrome 安装检查
+
+```bash
+# Windows
+where chrome
+
+# macOS
+which google-chrome
+
+# Linux
+which google-chrome-stable
+```
+
+如果命令返回路径，说明 Chrome 已正确安装。
 
 ---
 
@@ -154,6 +179,36 @@ douyin-web-tools/
 
 ---
 
+## ❓ 常见问题
+
+### Q: 提示 "Chrome not found" 怎么办？
+
+A: 确保 Chrome 已安装并添加到系统 PATH。如果安装在非默认位置，可设置环境变量：
+
+```bash
+# Windows PowerShell
+$env:CHROME_PATH="C:\Program Files\Google\Chrome\Application\chrome.exe"
+
+# Linux/macOS
+export CHROME_PATH=/usr/bin/google-chrome
+```
+
+### Q: 首次运行很慢？
+
+A: DrissionPage 首次会自动下载匹配的 ChromeDriver，请耐心等待。
+
+### Q: 如何指定 Chrome 用户数据目录？
+
+A: 修改代码中的 `Chromium()` 初始化参数：
+
+```python
+from DrissionPage import Chromium
+
+browser = Chromium(user_data_path='./chrome_data')
+```
+
+---
+
 ## ⚠️ 免责声明
 
 本工具仅供学习研究使用，请勿用于：
@@ -162,6 +217,11 @@ douyin-web-tools/
 - 违反抖音平台规则的行为
 
 使用本工具产生的任何法律责任由使用者自行承担。
+
+**温馨提示**: 
+- 请合理控制请求频率，避免对平台造成压力
+- 尊重内容创作者的版权和劳动成果
+- 建议配合代理 IP 使用，降低封号风险
 
 ---
 
