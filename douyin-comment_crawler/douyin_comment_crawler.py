@@ -14,7 +14,7 @@ from DrissionPage import Chromium
 class DouyinCommentCrawler:
     """Crawl Douyin video comments and save a JSON report."""
 
-    COMMENT_COUNT_THRESHOLD = 100
+    COMMENT_COUNT_THRESHOLD = 1000
     COMMENT_LIST_XPATH = 'x://*[@id="douyin-right-container"]/div[2]/div/div/div[1]/div[5]/div/div/div[3]/div'
     COMMENT_SCROLL_XPATH = 'x://div[contains(@class, "parent-route-container route-scroll-container IhmVuo1S")]'
     COMMENT_END_XPATH = (
